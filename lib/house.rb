@@ -8,10 +8,12 @@ class House
     @price = price.tr('^0-9', '').to_i
     @address = address
     @rooms = []
+    @categories = []
   end
 
   def add_room(room)
     @rooms << room
+    @categories << room.category unless @categories.include?(room.category)
   end
 
   def above_market_average?
@@ -38,5 +40,13 @@ class House
 
   def rooms_sorted_by_area
     @rooms.sort { |lower, higher| higher.area <=> lower.area }
+  end
+
+  def rooms_by_category
+    rooms_by_category = {}
+    @categories.each do |category|
+      rooms_by_category[category] = @rooms.select { |room| room.category == category }
+    end
+    rooms_by_category
   end
 end
