@@ -35,4 +35,8 @@ class House
   def price_per_square_foot
     (@price.to_f / area).round(2)
   end
+
+  def rooms_sorted_by_area
+    @rooms.sort { |lower, higher| higher.area <=> lower.area }
+  end
 end
