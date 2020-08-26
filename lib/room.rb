@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Holds data for a room in a house
 class Room
   attr_reader :category, :length, :width
 
