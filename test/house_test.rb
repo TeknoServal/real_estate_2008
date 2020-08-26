@@ -64,4 +64,11 @@ class HouseTest < Minitest::Test
 
     assert_equal 1_900, house.area
   end
+
+  def test_details
+    house = House.new('$400000', '123 sugar lane')
+    details = { 'price' => 400_000, 'address' => '123 sugar lane' }
+
+    assert_equal details, house.details
+  end
 end
