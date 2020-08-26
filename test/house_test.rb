@@ -119,6 +119,6 @@ class HouseTest < Minitest::Test
 
     categories = { bedroom: [room1, room2], living_room: [room3], basement: [room4] }
 
-    assert_equal categoris, house.rooms_by_category
+    assert_equal categories, house.rooms_by_category
   end
 end
